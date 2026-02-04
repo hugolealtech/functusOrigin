@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>FUNCTUS v8.1.1 - Infinity Protocol</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+    
+</head>
+<body>
+
+<header>
+    <h1><i class="fa-solid fa-bolt"></i> Functus <span class="badge-v3">v8.1.1 Infinity</span></h1>
+    <div style="display: flex; gap: 10px; align-items: center;">
+        <div id="storageMeter" class="storage-pill" title="Uso do Armazenamento Local">
+            <i class="fa-solid fa-database"></i> <span id="storageText">0%</span>
+        </div>
+        <button class="btn btn-primary" onclick="app.openImportModal()" title="Importar Fatura via Texto"><i class="fa-solid fa-paste"></i> <span style="display:inline">Importar</span></button>
+        <button class="btn btn-ghost" onclick="app.toggleTheme()" title="Mudar Tema"><i class="fa-solid fa-moon" id="themeIcon"></i></button>
+        <button class="btn btn-ghost" onclick="app.showDebtProjection()" title="Até quando eu pago?"><i class="fa-solid fa-hourglass-half"></i></button>
+        <button class="btn btn-gold" onclick="app.recommendCard()" title="Melhor Cartão"><i class="fa-solid fa-wand-magic-sparkles"></i></button>
+        <button id="btnBackup" class="btn btn-ghost" onclick="app.exportData()" title="Salvar Backup"><i class="fa-solid fa-download"></i></button>
+        <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()" title="Restaurar"><i class="fa-solid fa-upload"></i></button>
+        <input type="file" id="fileInput" class="hidden" onchange="app.importData(this)">
+    </div>
+</header>
+
+<div style="text-align: center; padding-top: 20px; overflow-x: hidden;">
+    <div class="nav-container">
+        <div class="nav-tab active" onclick="app.switchTab('dashboard')"><i class="fa-solid fa-chart-pie"></i> Dashboard</div>
+        <div class="nav-tab" onclick="app.switchTab('planner')"><i class="fa-regular fa-calendar-check"></i> Planner</div>
+        <div class="nav-tab" onclick="app.switchTab('entries')"><i class="fa-solid fa-pen-to-square"></i> Lançar</div>
+        <div class="nav-tab" onclick="app.switchTab('cards')"><i class="fa-regular fa-credit-card"></i> Cartões</div>
+    </div>
+</div>
+
+<main id="main-content"></main>
+
+<script src="functus.js"></script>
+</body>
+</html>
