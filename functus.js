@@ -1156,6 +1156,7 @@ const App = {
 
                 <div style="margin: 20px 0;">
                     <label>2. Cole aqui o texto da fatura:</label>
+                    <p style="font-size:0.8rem; color:var(--text-light); margin:5px 0 15px 0;"><strong>Dica:Use para compras à vista. Compras à prazo, faça o lançamento manualmente.</strong> </p>
                     <textarea id="importText" rows="6" style="width:100%; font-family:monospace; font-size:0.8rem; background: rgba(0,0,0,0.03);" placeholder="Ex: 15/01 UBER DO BRASIL 15,90..."></textarea>
                     <button class="btn btn-primary" style="margin-top:10px; width:100%" onclick="app.processPastedText()">
                         <i class="fa-solid fa-gears"></i> Processar Texto
